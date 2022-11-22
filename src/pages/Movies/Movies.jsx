@@ -14,10 +14,10 @@ const Movies = () => {
     if (!filterParam) {
       return;
     }
-    
+
     fetchMoviesByQuery(filterParam)
       .then(data => {
-        if (data.length === 0) {
+        if (!data) {
           setError('Nothing found =(');
           return;
         }

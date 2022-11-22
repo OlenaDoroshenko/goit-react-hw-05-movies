@@ -36,17 +36,17 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
 
-  if (!movie) {
-    return null;
-  }
 
   return (
     <Box p="20px">
       <BackLink to={backLinkHref}>Back</BackLink>
       {error && <p>{error}</p>}
+      {movie && (
+        <>
       <MovieOverview movie={movie} genres={genres} image={imageSource}/>
       <MovieAddInfo state={location.state.from}/>
       <Outlet />
+      </>)}
       </Box>
   )
 };
