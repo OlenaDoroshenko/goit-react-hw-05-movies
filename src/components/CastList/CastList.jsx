@@ -9,11 +9,10 @@ const CastList = () => {
   const { movieId } = useParams();
   const [error, setError] = useState(null);
   const [cast, setCast] = useState([]);
-  const [imageSource, setImageSource] = useState('');
 
   useEffect(() => {
     fetchCast();
-  }, []);
+  });
 
   const fetchCast = async () => {
     try {
@@ -24,9 +23,6 @@ const CastList = () => {
       }
 
       setCast(response);
-      setImageSource(
-        `https://image.tmdb.org/t/p/w200/${response.profile_path}`
-      );
     } catch {
       setError('Failed to load =(');
     }

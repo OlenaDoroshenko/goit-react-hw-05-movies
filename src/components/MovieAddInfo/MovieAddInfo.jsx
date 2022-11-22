@@ -1,7 +1,5 @@
 import Box from 'components/base/Box/Box';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const MovieAddInfo = () => {
   const location = useLocation();

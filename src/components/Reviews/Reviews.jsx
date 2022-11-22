@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Box from 'components/base/Box/Box';
 import ReviewsItem from 'components/ReviewsItem/ReviewsItem';
-import PropTypes from 'prop-types';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -12,7 +11,7 @@ const Reviews = () => {
 
   useEffect(() => {
     fetchCast();
-  }, []);
+  });
 
   const fetchCast = async () => {
     try {
