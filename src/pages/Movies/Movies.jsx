@@ -17,7 +17,7 @@ const Movies = () => {
 
     fetchMoviesByQuery(filterParam)
       .then(data => {
-        if (!data) {
+        if (!data.length) {
           setError('Nothing found =(');
           return;
         }

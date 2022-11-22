@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Box from 'components/base/Box/Box';
 import PropTypes from 'prop-types';
 
 const SearchBox = ({ onSubmit }) => {
@@ -15,10 +16,12 @@ const SearchBox = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Box as="form" onSubmit={handleSubmit}>
+    {/* <form onSubmit={handleSubmit}> */}
       <input type="text" value={query} onChange={handleChange}></input>
       <button type="submit">Search</button>
-    </form>
+    {/* </form> */}
+    </Box>
   );
 };
 
