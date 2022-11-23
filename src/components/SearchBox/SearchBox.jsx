@@ -14,13 +14,12 @@ const SearchBox = ({ onSubmit }) => {
     onSubmit(query);
     setQuery('');
   };
-
   return (
     <Box as="form" onSubmit={handleSubmit}>
-    {/* <form onSubmit={handleSubmit}> */}
       <input type="text" value={query} onChange={handleChange}></input>
-      <button type="submit">Search</button>
-    {/* </form> */}
+      <button type="submit" disabled={!query}>
+        Search
+      </button>
     </Box>
   );
 };
@@ -28,5 +27,5 @@ const SearchBox = ({ onSubmit }) => {
 export default SearchBox;
 
 SearchBox.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-}
+  onSubmit: PropTypes.func.isRequired,
+};
